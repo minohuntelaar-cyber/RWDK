@@ -1,4 +1,7 @@
-<!DOCTYPE html><html><head>
+<!DOCTYPE html>
+
+<html>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,20 +18,19 @@
     		return e;
     	}
     </script>
-    <script async="" src="main.dart.js"></script>
-    
+    <script defer src="main.dart.js"></script>
 </head>
 <body>
 	<div id="haxbox"></div>
 	<div id="alertbackground">
 		<div id="alertbox" class="ui popup">
-			<span id="alerttitle"></span><br>
+			<span id="alerttitle"></span><br/>
 			<span id="alerttext"></span>
 			<div id="alertbutton" class="ui popupbutton">Close</div>
 		</div>
 		<div id="confirmbox" class="ui popup">
-			<span id="confirmtitle"></span><br>
-			<span id="confirmtext"></span><br>
+			<span id="confirmtitle"></span><br/>
+			<span id="confirmtext"></span><br/>
 			<div id="confirmbuttonyes" class="ui popupbutton"></div>
 			<div id="confirmbuttonno" class="ui popupbutton"></div>
 		</div>
@@ -36,7 +38,7 @@
 			<h2>Reorder Block IDs</h2>
 			<div>
 				<p>Reassign the ids of the blocks in the list. This can be useful to avoid conflicts if you have more than one local mod.</p>
-				<label for="idreorderfield">Start ID:</label><input type="number" id="idreorderfield" value="1" min="1" max="25999">
+				<label for="idreorderfield">Start ID:</label><input type="number" id="idreorderfield" value="1" min="1" max="25999"/>
 				<p>Reordered ids will start at this number and will be assigned contiguously in the order that the blocks appear in the list, avoiding the reserved range 200-16999. ReplicateBlock entries which refer to a block ID will be automatically updated if the block is in the list.</p>
 			</div>
 			<div>
@@ -47,7 +49,7 @@
 	</div>
 	<div class="tabrow">
 		<div class="tab" id="blockstab">Blocks<div class="tabdisplay"></div></div>
-		<div class="tab" id="shapesstab">Shapes (WIP)<div class="tabdisplay"></div></div>
+		<div class="tab" id="shapesstab">Shapes<div class="tabdisplay"></div></div>
 		<div class="tab" id="factionstab">Factions<div class="tabdisplay"></div></div>
 		<div class="tab" id="regionstab">Regions<div class="tabdisplay"></div></div>
 		<div class="tab" id="shipstab">Ships (WIP)<div class="tabdisplay"></div></div>
@@ -59,10 +61,10 @@
 		<div class="menu" id="blocksavebutton" title="Save blocks"><div class="menuicon"><i class="glyphicon glyphicon-floppy-disk"></i></div>Save</div>
 		<div class="menu" id="blockclearbutton" title="Clear block palette"><div class="menuicon"><i class="glyphicon glyphicon-trash"></i></div>Clear</div>
 		<div class="menu" id="idbutton" title="Reorder block IDs"><div class="menuicon"><i class="glyphicon glyphicon-sort-by-order"></i></div>Reorder</div>
-		<a href="http://www.anisopteragames.com/forum/viewtopic.php?f=9&amp;t=2075" target="_blank"><div class="menu" id="forumbutton" title="Reassembly Forum Thread"><div class="menuicon"><i class="glyphicon glyphicon-globe"></i></div>Forum</div></a>
+		<a href="http://www.anisopteragames.com/forum/viewtopic.php?f=9&t=2075" target="_blank"><div class="menu" id="forumbutton" title="Reassembly Forum Thread"><div class="menuicon"><i class="glyphicon glyphicon-globe"></i></div>Forum</div></a>
 		<a href="http://www.anisopteragames.com/docs/" target="_blank"><div class="menu" id="forumbutton" title="Reassembly Modding Documentation"><div class="menuicon"><i class="glyphicon glyphicon-list"></i></div>Docs</div></a>
 		
-		<input type="file" accept=".lua" id="blockloadinput">
+		<input type="file" accept=".lua" id="blockloadinput"/>
 		
 		<div class="ui databank" id="databank_outer">
 			<div id="databank" class="databankinner"></div>
@@ -77,10 +79,10 @@
 		<div class="menu" id="shapeloadbutton" title="Load shapes"><div class="menuicon"><i class="glyphicon glyphicon-folder-open"></i></div>Load</div>
 		<div class="menu" id="shapesavebutton" title="Save shapes"><div class="menuicon"><i class="glyphicon glyphicon-floppy-disk"></i></div>Save</div>
 		<div class="menu" id="shapeclearbutton" title="Clear shape palette"><div class="menuicon"><i class="glyphicon glyphicon-trash"></i></div>Clear</div>
-		<a href="http://www.anisopteragames.com/forum/viewtopic.php?f=9&amp;t=2075" target="_blank"><div class="menu" id="forumbutton" title="Reassembly Forum Thread"><div class="menuicon"><i class="glyphicon glyphicon-globe"></i></div>Forum</div></a>
+		<a href="http://www.anisopteragames.com/forum/viewtopic.php?f=9&t=2075" target="_blank"><div class="menu" id="forumbutton" title="Reassembly Forum Thread"><div class="menuicon"><i class="glyphicon glyphicon-globe"></i></div>Forum</div></a>
 		<a href="http://www.anisopteragames.com/docs/" target="_blank"><div class="menu" id="forumbutton" title="Reassembly Modding Documentation"><div class="menuicon"><i class="glyphicon glyphicon-list"></i></div>Docs</div></a>
 		
-		<input type="file" accept=".lua" id="shapeloadinput" multiple="">
+		<input type="file" accept=".lua" id="shapeloadinput" multiple/>
 		
 		<div class="ui databank" id="shapelist_outer">
 			<div id="shapelist" class="databankinner"></div>
@@ -95,10 +97,10 @@
 		<div class="menu" id="factionloadbutton" title="Load factions"><div class="menuicon"><i class="glyphicon glyphicon-folder-open"></i></div>Load</div>
 		<div class="menu" id="factionsavebutton" title="Save factions"><div class="menuicon"><i class="glyphicon glyphicon-floppy-disk"></i></div>Save</div>
 		<div class="menu" id="factionclearbutton" title="Clear faction palette"><div class="menuicon"><i class="glyphicon glyphicon-trash"></i></div>Clear</div>
-		<a href="http://www.anisopteragames.com/forum/viewtopic.php?f=9&amp;t=2075" target="_blank"><div class="menu" id="forumbutton" title="Reassembly Forum Thread"><div class="menuicon"><i class="glyphicon glyphicon-globe"></i></div>Forum</div></a>
+		<a href="http://www.anisopteragames.com/forum/viewtopic.php?f=9&t=2075" target="_blank"><div class="menu" id="forumbutton" title="Reassembly Forum Thread"><div class="menuicon"><i class="glyphicon glyphicon-globe"></i></div>Forum</div></a>
 		<a href="http://www.anisopteragames.com/docs/" target="_blank"><div class="menu" id="forumbutton" title="Reassembly Modding Documentation"><div class="menuicon"><i class="glyphicon glyphicon-list"></i></div>Docs</div></a>
 		
-		<input type="file" accept=".lua" id="factionloadinput">
+		<input type="file" accept=".lua" id="factionloadinput"/>
 		
 		<div class="ui databank" id="factionlist_outer">
 			<div id="factionlist" class="databankinner"></div>
@@ -113,10 +115,10 @@
 		<div class="menu" id="regionloadbutton" title="Load regions"><div class="menuicon"><i class="glyphicon glyphicon-folder-open"></i></div>Load</div>
 		<div class="menu" id="regionsavebutton" title="Save regions"><div class="menuicon"><i class="glyphicon glyphicon-floppy-disk"></i></div>Save</div>
 		<div class="menu" id="regionclearbutton" title="Clear region list"><div class="menuicon"><i class="glyphicon glyphicon-trash"></i></div>Clear</div>
-		<a href="http://www.anisopteragames.com/forum/viewtopic.php?f=9&amp;t=2075" target="_blank"><div class="menu" id="forumbutton" title="Reassembly Forum Thread"><div class="menuicon"><i class="glyphicon glyphicon-globe"></i></div>Forum</div></a>
+		<a href="http://www.anisopteragames.com/forum/viewtopic.php?f=9&t=2075" target="_blank"><div class="menu" id="forumbutton" title="Reassembly Forum Thread"><div class="menuicon"><i class="glyphicon glyphicon-globe"></i></div>Forum</div></a>
 		<a href="http://www.anisopteragames.com/docs/" target="_blank"><div class="menu" id="forumbutton" title="Reassembly Modding Documentation"><div class="menuicon"><i class="glyphicon glyphicon-list"></i></div>Docs</div></a>
 		
-		<input type="file" accept=".lua" id="regionloadinput">
+		<input type="file" accept=".lua" id="regionloadinput"/>
 		
 		<div id="regionsbox">
 			<div class="ui regionbank" id="regionlist_outer">
@@ -133,18 +135,17 @@
 		<div class="menudisabled" id="shipsavebutton" title="Save an archive of all ships (Not yet implemented)"><div class="menuicon"><i class="glyphicon glyphicon-download-alt"></i></div>Save</div>
 		<div class="menu" id="shipclearbutton" title="Clear ship list"><div class="menuicon"><i class="glyphicon glyphicon-trash"></i></div>Clear</div>
 		<div class="menu" id="shiprefreshbutton" title="Refresh ship renders"><div class="menuicon"><i class="glyphicon glyphicon-refresh"></i></div>Redraw</div>
-		<a href="http://www.anisopteragames.com/forum/viewtopic.php?f=9&amp;t=2075" target="_blank"><div class="menu" id="forumbutton" title="Reassembly Forum Thread"><div class="menuicon"><i class="glyphicon glyphicon-globe"></i></div>Forum</div></a>
+		<a href="http://www.anisopteragames.com/forum/viewtopic.php?f=9&t=2075" target="_blank"><div class="menu" id="forumbutton" title="Reassembly Forum Thread"><div class="menuicon"><i class="glyphicon glyphicon-globe"></i></div>Forum</div></a>
 		<a href="http://www.anisopteragames.com/docs/" target="_blank"><div class="menu" id="forumbutton" title="Reassembly Modding Documentation"><div class="menuicon"><i class="glyphicon glyphicon-list"></i></div>Docs</div></a>
 		
-		<input type="file" accept=".lua" id="shiploadinput" multiple="">
+		<input type="file" accept=".lua" id="shiploadinput" multiple/>
 		
 		<div id="shiplist" class="ui">
 		</div>
 	</div>
   	<div class="copyright">
-		RWDK by TTFTCUTS, 2017. Written in Dart. RWDK is an independent project and in no way affiliated with Anisoptera Games.<br>
+		RWDK by TTFTCUTS, 2017. Written in Dart. RWDK is an independent project and in no way affiliated with Anisoptera Games.<br/>
 		All graphics code created though observation and measurement, no decompilation software used.
 	</div>
-
-
-</body></html>
+</body>
+</html>
