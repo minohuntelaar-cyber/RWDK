@@ -1,22 +1,53 @@
-# Files and directories created by pub
-.packages
-.pub/
-#build/
-packages
-pubspec.lock # (Remove this pattern if you wish to check in your lock file)
+```
+# Compiled and build artifacts
+*.pyc
+__pycache__/
+*.o
+*.obj
+*.class
+*.exe
+*.dll
+*.so
+*.a
+*.out
 
-# Files created by dart2js
-#*.dart.js
-*.part.js
-*.js.deps
-*.js.map
-*.info.json
+# Dependencies
+node_modules/
+venv/
+.venv/
+.env
+.env.local
+*.env.*
 
-# Directory created by dartdoc
-#doc/api/
+# Build directories
+dist/
+build/
+target/
 
-# JetBrains IDEs
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+
+# Editors
+.vscode/
 .idea/
-*.iml
-*.ipr
-*.iws
+*.swp
+*.swo
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Coverage
+coverage/
+htmlcov/
+.coverage
+
+# Python specific
+.mypy_cache/
+.pytest_cache/
+
+# Java/Gradle
+.gradle/
+```

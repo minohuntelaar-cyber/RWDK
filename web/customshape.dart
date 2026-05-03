@@ -209,6 +209,19 @@ class CustomShape extends BlockShape implements IPartListable {
 			..drawGrid(this)
 			..drawBlockShape(this, bold:true);
 		this.nameelement.text = this.name;
+		
+		// Update info element with shape details
+		String info = "<span title='Area' class='glyphicon glyphicon-fullscreen'>${
+			this.areas[0].toStringAsFixed(2)
+		}</span> <span title='Max scale' class='glyphicon glyphicon-stats'>1-${this.maxScale}</span><br/>";
+		
+		if (this.hardpointCounts[0] != null) {
+			for (HardpointType p in this.hardpointCounts[0].keys) {
+				info += "<span class='glyphicon glyphicon-${p.icon}' style='color:${p.colourBold}' title='${p.name}'>${this.hardpointCounts[0][p]}</span> ";
+			}
+		}
+		
+		this.infoelement.innerHtml = info;
 	}
 	
 	void computeShapeInfo() {
@@ -398,7 +411,53 @@ class CustomShape extends BlockShape implements IPartListable {
 	}
 	
 	void save(StringBuffer buffer, [int indent = 0]){
+		String ind = "\t" * indent;
 		
+		buffer.writeln("${ind}[${this.id}] = {");
+		buffer.writeln("${ind}\tident = \"${this.name}\",");
+		
+		if (this.radial) {
+			buffer.writeln("${ind}\tlauncher_radial = true,");
+		}
+		
+		if (this.mirror != null) {
+			buffer.writeln("${ind}\tmirror_of = ${this.mirror.id},");
+		}
+		
+		// Save vertices and hardpoints for each scale
+		for (int scale = 0; scale < this.maxScale; scale++) {
+			List<Vertex> verts = this.vertices[scale];
+			List<HardpointDefinition> hpdefs = this.hardpointdefs[scale];
+			
+			if (verts.isEmpty) { continue; }
+			
+			buffer.writeln("${ind}\t[${scale+1}] = {");
+			
+			// Save vertices
+			buffer.writeln("${ind}\t\tverts = {");
+			for (int i = 0; i < verts.length; i++) {
+				Vertex v = verts[i];
+				// Convert back to game coordinates (multiply by 10, flip Y)
+				int gx = (v.x * 10).round();
+				int gy = (v.y * -10).round();
+				buffer.writeln("${ind}\t\t\t[${i}] = {${gx}, ${gy}},");
+			}
+			buffer.writeln("${ind}\t\t},");
+			
+			// Save hardpoints (ports)
+			if (hpdefs.isNotEmpty) {
+				buffer.writeln("${ind}\t\tports = {");
+				for (int i = 0; i < hpdefs.length; i++) {
+					HardpointDefinition hp = hpdefs[i];
+					buffer.writeln("${ind}\t\t\t[${i}] = {${hp.sideid}, ${hp.fraction}, \"${hp.type.savename}\"},");
+				}
+				buffer.writeln("${ind}\t\t},");
+			}
+			
+			buffer.writeln("${ind}\t},");
+		}
+		
+		buffer.writeln("${ind}}");
 	}
 }
 

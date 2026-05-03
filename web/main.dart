@@ -81,7 +81,7 @@ void main() {
 	});
 	
 	addLeftClick(querySelector("#shapesavebutton"), (MouseEvent e) {
-		//SaveWriter.saveShapesFile();
+		SaveWriter.saveShapesFile();
 	});
 	
 	addLeftClick(querySelector("#shapeclearbutton"), (MouseEvent e) {
