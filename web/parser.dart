@@ -428,6 +428,10 @@ class SaveWriter {
 		buffer.writeln("");
 	}
 	
+	static void saveShapesFile() {
+		saveListFile(customShapeList, "shapes");
+	}
+	
 	static void saveBlocksFile() {
 		saveListFile(componentList, "blocks");
 	}
